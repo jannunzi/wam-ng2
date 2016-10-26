@@ -14,17 +14,17 @@ You can update your Node/NPM versions using a simple utility [nvm](https://githu
 
 **BEFORE YOU SET UP:** please read the [prerequisites](#prerequisites).
 
-* Install the angular-cli **_globally_**:
+* Install the angular-cli **globally**:
 ```bash
 npm install -g angular-cli
 ```
 
-* Usage:
+* Ensure you have the angualr-cli by trying the usage:
 ```bash
 ng --help
 ```
 
-* Clone the wam-ng2 repo:
+* Clone the wam-ng2(https://github.com/parthahluwalia/wam-ng2) repo:
 ```bash
 git clone https://github.com/parthahluwalia/wam-ng2.git
 ```
@@ -37,7 +37,7 @@ npm install
 ## WAM ng2 Development
 
 If you wish to collaborate on development in the project, please request access to the repo by emailing us at:
-ahluwalia.p@husky.neu.edu, jannunzi@gmail.com
+ahluwalia.p@husky.neu.edu | jannunzi@gmail.com
 
 
 git push --set-upstream origin master
