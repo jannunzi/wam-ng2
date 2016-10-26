@@ -19,12 +19,12 @@ You can update your Node/NPM versions using a simple utility [nvm](https://githu
 npm install -g angular-cli
 ```
 
-* Ensure you have the angualr-cli by trying the usage:
+* Ensure that the CLI is setup by trying the usage:
 ```bash
 ng --help
 ```
 
-* Clone the wam-ng2(https://github.com/parthahluwalia/wam-ng2) repo:
+* Clone the [wam-ng2](https://github.com/parthahluwalia/wam-ng2) repo:
 ```bash
 git clone https://github.com/parthahluwalia/wam-ng2.git
 ```
