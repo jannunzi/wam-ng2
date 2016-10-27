@@ -2,7 +2,7 @@
 
 This is the Frontend component for Web App Maker App built using [angular-cli](https://github.com/angular/angular-cli) - a command-line utility developed by [angular](https://github.com/angular).
 
-I would **highly recommend** you to get a feel of ** [Angular-CLI](https://github.com/angular/angular-cli)** before starting up with this project.
+I would **highly recommend** you to get a feel of **[Angular-CLI](https://github.com/angular/angular-cli)** before starting up with this project.
 
 The project is a very much work in progress.
 
