@@ -49,7 +49,7 @@ The Frontend app, as scaffolded by [angular-cli](https://github.com/angular/angu
 
 Hence the Frontend app is served on the [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html) which in itself is a lite Node.js Express server.
 
-In _Dev_ Environment, we run our **frontend** server at `http://localhost:4200` and **middleware** server at `http://localhost:3000`.
+In _Dev Environment_, we run our **frontend** server at `http://localhost:4200` and **middleware** server at `http://localhost:3000`.
 
 ### Proxy to Backend
 
