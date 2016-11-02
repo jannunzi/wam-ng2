@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { WAMRoutingModule } from './app-routing.module';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     FormsModule,
     HttpModule,
-    WAMRoutingModule
+    WAMRoutingModule,
+    [MaterialModule.forRoot()]
   ],
   providers: [],
   bootstrap: [AppComponent]
