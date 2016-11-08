@@ -9,12 +9,14 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WebsitesComponent } from './websites/websites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WebsitesComponent
   ],
   imports: [
     BrowserModule,
