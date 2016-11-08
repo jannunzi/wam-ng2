@@ -1,0 +1,216 @@
+/*
+
+CORE STYLES (ported over for demo)
+
+*/
+
+@function rem($multiplier) {
+  $font-size: 10px;
+  @return $multiplier * $font-size;
+}
+
+$md-shadow-bottom-z-1: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !default;
+$md-shadow-bottom-z-2: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !default;
+
+$md-body-font-size-base: 14px !default;
+$font-family: Roboto, 'Helvetica Neue', sans-serif !default;
+$md-mobile-screen: 600px;
+
+/*
+
+CARD STYLES
+
+*/
+
+$md-card-default-padding: rem(2.400) !default;
+$md-card-mobile-padding: rem(2.400) rem(1.600) !default;
+$md-card-border-radius: 2px !default;
+$md-card-header-size: rem(4.000) !default;
+
+md-card {
+  display: block;
+  position:relative;
+  padding: $md-card-default-padding;
+  border-radius: $md-card-border-radius;
+  box-shadow: $md-shadow-bottom-z-1;
+  font-family: $font-family;
+  background: white;      // to be replaced with theming
+}
+
+%md_card_title_base {
+  display: block;
+  margin-bottom: rem(1.600);
+}
+
+md-card-title {
+  @extend %md_card_title_base;
+  font-size: rem(2.400);
+  font-weight: 400;
+}
+
+md-card-subtitle {
+  @extend %md_card_title_base;
+  font-size: $md-body-font-size-base;
+  color: rgba(0,0,0,0.54);    //to be replaced with theming
+}
+
+md-card-content {
+  display: block;
+  font-size: $md-body-font-size-base;
+  margin-bottom: rem(1.600);
+}
+
+md-card-actions {
+  display: block;
+  margin: rem(1.600) rem(-1.600);
+  padding: rem(0.800) 0;
+}
+
+md-card-actions {
+  [md-button], [md-raised-button], button {
+    margin: 0 rem(0.400);
+  }
+}
+
+img[md-card-image] {
+  width: calc(100% + 48px);
+  margin: 0 rem(-2.400) rem(1.600) rem(-2.400);
+}
+
+img[md-card-xl-image] {
+  width: rem(24.00);
+  height: rem(24.00);
+  margin: rem(-0.800);
+}
+
+md-card-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+/* HEADER STYLES */
+
+md-card-header {
+  display: flex;
+  flex-direction: row;
+  height: $md-card-header-size;
+  margin: rem(-0.800) 0 rem(1.600) 0;
+}
+
+.md-card-header-text {
+  height: $md-card-header-size;
+  margin: 0 rem(0.800);
+}
+
+img[md-card-avatar] {
+  height: $md-card-header-size;
+  width: $md-card-header-size;
+  border-radius: 50%;
+}
+
+md-card-header md-card-title {
+  font-size: $md-body-font-size-base;
+}
+
+md-card-header md-card-subtitle:not(:first-child) {
+  margin-top: rem(-0.800);
+}
+
+/* TITLE-GROUP STYLES */
+
+%md_card_title_img {
+  margin: rem(-0.800) 0;
+}
+
+md-card-title-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 rem(-0.800);
+}
+
+img[md-card-sm-image] {
+  @extend %md_card_title_img;
+  width: rem(8.00);
+  height: rem(8.00);
+}
+
+img[md-card-md-image] {
+  @extend %md_card_title_img;
+  width: rem(11.200);
+  height: rem(11.200);
+}
+
+img[md-card-lg-image] {
+  @extend %md_card_title_img;
+  width: rem(15.200);
+  height: rem(15.200);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: $md-mobile-screen){
+  md-card {
+    padding: $md-card-mobile-padding;
+  }
+
+  img[md-card-image] {
+    width: calc(100% + 32px);
+    margin: rem(1.600) rem(-1.600);
+  }
+
+  md-card-title-group {
+    margin: 0;
+  }
+
+  img[md-card-xl-image] {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+/* FIRST/LAST CHILD ADJUSTMENTS */
+
+md-card-title:not(:first-child), md-card-subtitle:not(:first-child) {
+  margin-top: rem(-0.400);
+}
+
+img[md-card-image]:first-child {
+  margin-top: rem(-2.400);
+}
+
+md-card-content:first-child {
+  margin: 0;
+  padding-top: 0;
+}
+
+md-card-content > *:first-child {
+  margin-top: 0;
+}
+
+.md-card > img[md-card-xl-image]:first-child{
+  margin-top: rem(-0.800);
+}
+
+.md-card > img[md-card-xl-image]:last-child {
+  margin-bottom: rem(-0.800);
+}
+
+.md-card > *:last-child, md-card-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.md-card > md-card-actions:last-child {
+  margin-bottom: rem(-1.600);
+  padding-bottom: 0;
+}
+
+md-card-actions [md-button]:first-child,
+md-card-actions [md-raised-button]:first-child {
+  margin: 0;
+}
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
