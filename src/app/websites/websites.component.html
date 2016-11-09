@@ -1,3 +1,20 @@
-<p>
-  websites works!
-</p>
+<table>
+  <thead>
+    <td>
+      ID
+    </td>
+    <td>
+      Website
+    </td>
+  </thead>
+  <tbody>
+    <tr *ngFor='let website of websites'>
+        <td>
+          {{website.id}}
+        </td>
+        <td>
+          {{website.name}}
+        </td>
+    </tr>
+  </tbody>
+</table>
