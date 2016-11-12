@@ -3,10 +3,23 @@
   <md-toolbar color="primary">Login</md-toolbar>
   <md-card-title></md-card-title>
   <md-card-content>
-    <form>
-      <md-input placeholder="Username" required></md-input>
-      <md-input placeholder="Password"></md-input>
+    <form name="form" (ngSubmit)="login()" #f="ngForm" novalidate>
+      <!-- If we are using ngModel within form tag, name attribute must be set -->
+      <md-input name="username"
+                [(ngModel)]="developer.username"
+                #username="ngModel"
+                placeholder="Username"
+                required></md-input>
+      <md-input name="password"
+                [(ngModel)]="developer.password"
+                type="password"
+                #password="ngModel"
+                placeholder="Password"
+                required></md-input>
       <button md-button color="primary">LOGIN</button>
+      <!-- Messages -->
+      <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+      <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
     </form>
 
     <md-card-actions>
@@ -15,57 +28,3 @@
     </md-card-actions>
   </md-card-content>
 </md-card>
-
-<!--<hr />-->
-
-
-<!--<form name="loginForm" novalidate>-->
-  <!--<div class="form-group">-->
-    <!--<input ng-model="developer.username"-->
-           <!--placeholder="username"-->
-           <!--autocorrect="off"-->
-           <!--autocapitalize="off"-->
-           <!--required-->
-           <!--name="username"-->
-           <!--class="form-control"/>-->
-    <!--<span ng-show="loginForm.$submitted && loginForm.username.$invalid">-->
-        <!--Username is required-->
-    <!--</span>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-    <!--<input ng-model="developer.password"-->
-           <!--autocorrect="off"-->
-           <!--autocapitalize="off"-->
-           <!--type="password"-->
-           <!--placeholder="password"-->
-           <!--required-->
-           <!--name="password"-->
-           <!--class="form-control"/>-->
-    <!--<span ng-show="loginForm.$submitted && loginForm.password.$invalid">-->
-        <!--Password is required-->
-    <!--</span>-->
-  <!--</div>-->
-
-  <!--<button class="btn btn-primary btn-block"-->
-          <!--ng-click="model.login(developer)">-->
-    <!--Login-->
-  <!--</button>-->
-<!--</form>-->
-
-<!--<a href="#/register"-->
-   <!--class="btn btn-success btn-block">-->
-  <!--Register-->
-<!--</a>-->
-
-<!--<a href="/auth/google"-->
-   <!--class="btn btn-danger btn-block">-->
-  <!--<span class="fa fa-google-plus"></span>-->
-  <!--Google-->
-<!--</a>-->
-
-<!--<a href="/auth/facebook"-->
-   <!--class="btn btn-primary btn-block">-->
-  <!--<span class="fa fa-facebook"></span>-->
-  <!--Facebook-->
-<!--</a>-->
-
