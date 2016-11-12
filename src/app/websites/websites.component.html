@@ -1,20 +1,36 @@
-<table>
-  <thead>
-    <td>
-      ID
-    </td>
-    <td>
-      Website
-    </td>
-  </thead>
-  <tbody>
-    <tr *ngFor='let website of websites'>
-        <td>
-          {{website.id}}
-        </td>
-        <td>
-          {{website.name}}
-        </td>
-    </tr>
-  </tbody>
-</table>
+<md-toolbar>
+  Websites
+</md-toolbar>
+
+<md-grid-list cols="1" rowHeight="100px" >
+      <table>
+        <thead>
+          <td>
+            ID
+          </td>
+          <td>
+            Website
+          </td>
+        </thead>
+        <tbody>
+          <md-grid-tile *ngFor="let website of websites" >
+            <tr>
+                <td>
+                  {{website._id}}
+                </td>
+                <td>
+                  {{website.description}}
+                </td>
+            </tr>
+          </md-grid-tile>
+        </tbody>
+
+      </table>
+
+</md-grid-list>
+
+<footer>
+        <div layout="row" layout-align="center center">
+            <h2>My Awesome Footer</h2>
+        </div>
+</footer>

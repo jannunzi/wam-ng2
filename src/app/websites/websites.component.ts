@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsitesService} from './../shared/websites.service';
 import { Website } from './../shared/models/website';
+import { Observable } from "rxjs/Observable";
+import 'rxjs/add/operator/map';
+import { MaterialModule } from '@angular/material';
 
 @Component({
   selector: 'app-websites',
@@ -20,7 +23,10 @@ export class WebsitesComponent implements OnInit {
   }
 
   getWebistesForUser() : void {
-      this.websites = this.websitesService.getWebistesForUser();
+      this.websitesService.getWebSitesByDeveloperId().
+        subscribe(
+          websites => this.websites = websites
+        )
   }
 
 }
