@@ -15,7 +15,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "wam-theme.scss"
       ],
       "scripts": [],
       "environments": {

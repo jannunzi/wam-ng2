@@ -1,0 +1,72 @@
+<div class="register">
+  <md-toolbar color="primary">
+    Register
+  </md-toolbar>
+
+  <md-card>
+
+    <md-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+
+        <div *ngIf="registerForm.getError('dbError')">
+          Server Error
+        </div>
+
+        <md-input [formControl]="registerForm.controls['username']"
+                  type="text" placeholder="Username" name="username"
+                  required>
+
+          <md-hint align="end" ng-messages="red" class="error">
+        <span *ngIf="registerForm.controls['username'].touched &&
+                     registerForm.controls['username'].getError('required')">
+          Username is required
+        </span>
+        <span *ngIf="registerForm.controls['username'].getError('usernameExists')">
+          Username already registered
+        </span>
+          </md-hint>
+
+        </md-input>
+
+
+        <md-input
+          [formControl]="registerForm.controls['password']"
+          type="password" placeholder="Password" name="password"
+          required>
+
+          <md-hint align="end" class="error" *ngIf="registerForm.controls['password'].touched &&
+                registerForm.controls['password'].getError('required')">
+            Password is required
+          </md-hint>
+
+        </md-input>
+
+
+        <md-input
+          [formControl]="registerForm.controls['password2']"
+          type="password" placeholder="Confirm Password" name="password2"
+          required>
+
+          <md-hint align="end" class="error" *ngIf="registerForm.controls['password2'].touched">
+            <div *ngIf="registerForm.controls['password2'].getError('required')">
+              Confirm Password is required
+            </div>
+
+            <div *ngIf="!registerForm.controls['password2'].getError('required') &&
+                     registerForm.getError('match')">
+              Passwords do not match
+            </div>
+          </md-hint>
+
+        </md-input>
+
+
+        <md-card-actions>
+          <button type="submit" md-button color="primary">REGISTER</button>
+          <a md-button color="primary" (click)="goToLogin()">CANCEL</a>
+        </md-card-actions>
+
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

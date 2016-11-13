@@ -1,0 +1,12 @@
+.register{
+  margin:auto;
+  width: 90%;
+}
+
+md-input{
+  width: 100%;
+}
+
+.error{
+  color: crimson;
+}
