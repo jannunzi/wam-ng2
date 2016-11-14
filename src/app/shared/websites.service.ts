@@ -11,26 +11,27 @@ export class WebsitesService {
   constructor(public http : Http) {
   }
 
-  getWebistesForUser(): Website[] {
-      return [
-              {
-                "_id": "581a7f512931271322fe3122",
-                "description": "Test Website",
-                "_developer": "581a77f42931271322fe3121",
-                "__v": 0,
-                "pages": [],
-                "dateModified": "2016-11-08T22:29:34.000Z",
-                "dateCreated": "2016-11-03T00:05:37.522Z",
-                "name": "Test Website"
-              }
-            ];
-  }
-
-  getWebSitesByDeveloperId() : Observable<Website[]> {
-    return this.http.get('http://localhost:3000/api/developer/581a77f42931271322fe3121/website')
+  /*
+  * Returns the list of websites for a particular developer
+  */
+  getWebSitesByDeveloperId(developerId) : Observable<Website[]> {
+    return this.http.get('http://localhost:3000/api/developer/'+developerId+'/website')
       .map(
         (responseData) => {
           return responseData.json();
+        }
+      )
+  }
+
+
+  /*
+  * Creates a new website
+  */
+  createWebsite(website) : Observable<any>{
+    return this.http.post('http://localhost:3000/api/developer/581a77f42931271322fe3121/website', website)
+      .map(
+        (responseData) => {
+          return responseData;
         }
       )
   }

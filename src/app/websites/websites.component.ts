@@ -16,15 +16,20 @@ export class WebsitesComponent implements OnInit {
 
   websites : Website[];
 
+  /*
+  * TODO : Get the developer Id from User authentication/local storage.
+  */
+  developerId = "581a77f42931271322fe3121";
+
   constructor(private websitesService : WebsitesService) { }
 
   ngOnInit() : void{
-    this.getWebistesForUser();
+    this.getWebSitesByDeveloperId(this.developerId);
   }
 
-  getWebistesForUser() : void {
-      this.websitesService.getWebSitesByDeveloperId().
-        subscribe(
+  getWebSitesByDeveloperId(developerId) : void {
+      this.websitesService.getWebSitesByDeveloperId(developerId)
+      .subscribe(
           websites => this.websites = websites
         )
   }

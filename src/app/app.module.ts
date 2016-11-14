@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WebsitesComponent } from './websites/websites.component';
+import { NewWebsiteComponent } from './new-website/new-website.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    WebsitesComponent
+    WebsitesComponent,
+    NewWebsiteComponent
   ],
   imports: [
     BrowserModule,

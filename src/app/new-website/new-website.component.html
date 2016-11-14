@@ -1,0 +1,23 @@
+<md-card>
+  <md-toolbar>NEW WEBISTE</md-toolbar>
+  <md-card-title></md-card-title>
+  <md-card-content>
+    <form name="form" (ngSubmit)="createWebsite()" #f="ngForm" novalidate>
+      <!-- If we are using ngModel within form tag, name attribute must be set -->
+      <md-input name="name"
+                [(ngModel)]="newWebsite.name"
+                #name="ngModel"
+                placeholder="Website Name"
+                required></md-input>
+      <md-input name="description"
+                [(ngModel)]="newWebsite.description"
+                #description="ngModel"
+                placeholder="Website Description"
+                required></md-input>
+      <button md-button>CREATE</button>
+      <!-- Messages -->
+      <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+      <div *ngIf="f.submitted && !description.valid" class="help-block">Website is required</div>
+    </form>
+  </md-card-content>
+</md-card>
