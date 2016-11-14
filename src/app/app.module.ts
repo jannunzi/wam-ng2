@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WebsitesComponent } from './websites/websites.component';
 import { NewWebsiteComponent } from './new-website/new-website.component';
+import { EditWebsiteComponent } from './edit-website/edit-website.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewWebsiteComponent } from './new-website/new-website.component';
     LoginComponent,
     PageNotFoundComponent,
     WebsitesComponent,
-    NewWebsiteComponent
+    NewWebsiteComponent,
+    EditWebsiteComponent
   ],
   imports: [
     BrowserModule,

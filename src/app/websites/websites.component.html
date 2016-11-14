@@ -4,14 +4,6 @@
 
 <md-grid-list cols="1" rowHeight="100px" >
       <table>
-        <thead>
-          <td>
-            ID
-          </td>
-          <td>
-            Website
-          </td>
-        </thead>
         <tbody>
           <md-grid-tile *ngFor="let website of websites" >
             <tr>
@@ -20,6 +12,11 @@
                 </td>
                 <td>
                   {{website.description}}
+                </td>
+                <td>
+                  <button md-button (click)="editWebsite(website)">
+                    <md-icon>settings</md-icon>
+                  </button>
                 </td>
             </tr>
           </md-grid-tile>

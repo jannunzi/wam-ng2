@@ -34,4 +34,8 @@ export class WebsitesComponent implements OnInit {
         )
   }
 
+  editWebsite(website) : void {
+      console.log("Edit Website ", website);
+  }
+
 }
