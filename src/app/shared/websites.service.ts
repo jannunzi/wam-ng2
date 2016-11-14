@@ -36,4 +36,24 @@ export class WebsitesService {
       )
   }
 
+  /*
+  * Find Website By ID
+  */
+  findWebsiteById(websiteID) : Observable<Website>{
+  return this.http.get('http://localhost:3000/api/website/'+ websiteID)
+    .map(
+      (responseData) => {
+        return responseData.json();
+      }
+    )
+  }
+
+  /*
+  * Update Single Website
+  */
+
+  /*
+  * Delete Single Website
+  */
+
 }

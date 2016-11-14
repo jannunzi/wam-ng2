@@ -4,6 +4,7 @@ import { Website } from './../shared/models/website';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import { MaterialModule } from '@angular/material';
+import { Router, Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-websites',
@@ -21,7 +22,8 @@ export class WebsitesComponent implements OnInit {
   */
   developerId = "581a77f42931271322fe3121";
 
-  constructor(private websitesService : WebsitesService) { }
+  constructor(private websitesService : WebsitesService,
+              private router:Router) { }
 
   ngOnInit() : void{
     this.getWebSitesByDeveloperId(this.developerId);
@@ -35,7 +37,7 @@ export class WebsitesComponent implements OnInit {
   }
 
   editWebsite(website) : void {
-      console.log("Edit Website ", website);
+      this.router.navigate(['/edit-website/'+website._id]);
   }
 
 }

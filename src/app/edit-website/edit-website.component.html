@@ -1,3 +1,24 @@
-<p>
-  edit-website works!
-</p>
+<md-card>
+  <md-toolbar>UPDATE WEBISTE</md-toolbar>
+  <md-card-title></md-card-title>
+  <md-card-content>
+    <form name="form" (ngSubmit)="updateWebsite()" #f="ngForm" novalidate>
+      <!-- If we are using ngModel within form tag, name attribute must be set -->
+      <md-input name="name"
+                [(ngModel)]="website.name"
+                #name="ngModel"
+                placeholder="Website Name"
+                required></md-input>
+      <md-input name="description"
+                [(ngModel)]="website.description"
+                #description="ngModel"
+                placeholder="Website Description"
+                required></md-input>
+      <button md-button>UPDATE</button>
+      <button md-button>DELETE</button>
+      <!-- Messages -->
+      <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+      <div *ngIf="f.submitted && !description.valid" class="help-block">Website is required</div>
+    </form>
+  </md-card-content>
+</md-card>

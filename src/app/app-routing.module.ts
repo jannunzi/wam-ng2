@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'websites', component: WebsitesComponent},
   { path: 'new-website', component: NewWebsiteComponent },
-  { path: 'edit-website', component: EditWebsiteComponent },
+  { path: 'edit-website/:websiteId', component: EditWebsiteComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
