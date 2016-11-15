@@ -37,6 +37,7 @@ export class WebsitesComponent implements OnInit {
   }
 
   editWebsite(website) : void {
+      console.log(website);
       this.router.navigate(['/edit-website/'+website._id]);
   }
 

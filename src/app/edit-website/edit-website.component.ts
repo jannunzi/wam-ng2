@@ -11,7 +11,8 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-edit-website',
   templateUrl: './edit-website.component.html',
-  styleUrls: ['./edit-website.component.css']
+  styleUrls: ['./edit-website.component.css'],
+  providers : [WebsitesService]
 })
 export class EditWebsiteComponent implements OnInit {
 
@@ -24,8 +25,9 @@ export class EditWebsiteComponent implements OnInit {
   */
   developerId = "581a77f42931271322fe3121";
 
-  website : Website;
+  w : Website;
   websiteID : string;
+  updatedWebsite : any = {};
 
   ngOnInit() {
       this.getRouteWebsiteId();
@@ -33,7 +35,13 @@ export class EditWebsiteComponent implements OnInit {
   }
 
   updateWebsite() : void{
-
+      this.w.name = this.updatedWebsite.name;
+      this.w.description = this.updatedWebsite.description;
+      //this.w.dateModified = Date.now();
+      this.websitesService.updateWebsite(this.w)
+        .subscribe(
+          website => this.router.navigate(['/websites'])
+        )
   }
 
   deleteWebsite() : void{
@@ -43,7 +51,7 @@ export class EditWebsiteComponent implements OnInit {
   findWebsiteById() : void{
     this.websitesService.findWebsiteById(this.websiteID)
       .subscribe(
-        website => this.website = website
+        website => this.w = website
       )
   }
 

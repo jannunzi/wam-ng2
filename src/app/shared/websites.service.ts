@@ -51,6 +51,14 @@ export class WebsitesService {
   /*
   * Update Single Website
   */
+  updateWebsite(website) : Observable<any> {
+  return this.http.put('http://localhost:3000/api/website/'+ website._id, website)
+    .map(
+      (responseData) => {
+        return responseData.json();
+      }
+    )
+  }
 
   /*
   * Delete Single Website
