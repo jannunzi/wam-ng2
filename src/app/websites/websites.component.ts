@@ -37,8 +37,16 @@ export class WebsitesComponent implements OnInit {
   }
 
   editWebsite(website) : void {
-      console.log(website);
       this.router.navigate(['/edit-website/'+website._id]);
+  }
+
+  addWebsite() : void {
+    this.router.navigate(['/new-website']);
+  }
+
+  openPages(website) : void {
+    console.log("Open Pages");
+    this.router.navigate(['/pages/' + website._developer + "/"+ website._id  ]);
   }
 
 }

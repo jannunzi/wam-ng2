@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { WebsitesComponent } from './websites/websites.component';
 import { NewWebsiteComponent } from './new-website/new-website.component';
 import { EditWebsiteComponent } from './edit-website/edit-website.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditWebsiteComponent } from './edit-website/edit-website.component';
     PageNotFoundComponent,
     WebsitesComponent,
     NewWebsiteComponent,
-    EditWebsiteComponent
+    EditWebsiteComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,

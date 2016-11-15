@@ -1,11 +1,14 @@
 <md-toolbar>
   Websites
+  <button (click) = "addWebsite()" md-button>
+    <md-icon>add</md-icon>
+  </button>
 </md-toolbar>
 <md-grid-list cols="1" rowHeight="100px" >
-      <table>
+      <table border="1">
         <tbody>
           <md-grid-tile *ngFor="let website of websites" >
-            <tr>
+            <tr (click) = "openPages(website)">
                 <td>
                   {{website._id}}
                 </td>

@@ -6,6 +6,7 @@ import {PageNotFoundComponent} from "./page-not-found";
 import {WebsitesComponent} from "./websites"
 import {NewWebsiteComponent} from "./new-website"
 import {EditWebsiteComponent} from "./edit-website"
+import { PagesComponent} from "./pages"
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'websites', component: WebsitesComponent},
   { path: 'new-website', component: NewWebsiteComponent },
   { path: 'edit-website/:websiteId', component: EditWebsiteComponent },
+  { path: 'pages/:developerId/:websiteId', component: PagesComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
