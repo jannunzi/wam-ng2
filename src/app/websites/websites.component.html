@@ -1,7 +1,6 @@
 <md-toolbar>
   Websites
 </md-toolbar>
-{{websites}}
 <md-grid-list cols="1" rowHeight="100px" >
       <table>
         <tbody>
@@ -9,6 +8,9 @@
             <tr>
                 <td>
                   {{website._id}}
+                </td>
+                <td>
+                  {{website.name}}
                 </td>
                 <td>
                   {{website.description}}

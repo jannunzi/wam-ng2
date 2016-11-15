@@ -45,7 +45,10 @@ export class EditWebsiteComponent implements OnInit {
   }
 
   deleteWebsite() : void{
-
+    this.websitesService.deleteWebsite(this.w._id)
+      .subscribe(
+        website => this.router.navigate(['/websites'])
+      )
   }
 
   findWebsiteById() : void{

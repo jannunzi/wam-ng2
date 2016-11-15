@@ -63,5 +63,13 @@ export class WebsitesService {
   /*
   * Delete Single Website
   */
+  deleteWebsite(websiteID) : Observable<any> {
+    return this.http.delete('http://localhost:3000/api/website/' + websiteID)
+      .map(
+        (responseData) => {
+          return responseData.json();
+        }
+      )
+  }
 
 }
