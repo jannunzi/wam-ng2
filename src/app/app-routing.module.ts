@@ -4,10 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register/register.component';
 import {PageNotFoundComponent} from "./page-not-found";
+import {ProfileComponent} from './profile';
+import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 
 const routes: Routes = [
+  // { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'edit/:developerId', component: EditProfileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
