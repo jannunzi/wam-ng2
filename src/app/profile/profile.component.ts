@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
 
   logout(): void{
     //TODO:: Need to implement clearing the session.
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 }
 

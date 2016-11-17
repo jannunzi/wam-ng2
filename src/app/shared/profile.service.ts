@@ -3,7 +3,6 @@ import { Observable } from "rxjs/Observable";
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {forEach} from "@angular/router/src/utils/collection";
-// Need to look for the ts files from "models" folder.
 
 @Injectable()
 export class ProfileService {
