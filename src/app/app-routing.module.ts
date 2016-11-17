@@ -9,7 +9,7 @@ import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'edit', component: EditProfileComponent },
+  { path: 'edit/:developerId', component: EditProfileComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

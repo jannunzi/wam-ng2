@@ -8,9 +8,9 @@ import {forEach} from "@angular/router/src/utils/collection";
 @Injectable()
 export class ProfileService {
   constructor (public http : Http) { }
+  developer : any
 
   getDeveloperList(developerId) : Observable<any>{
-    // console.log(developerId);
     return this.http.get('/api/developer')
       .map(
         (responseData: Response) => {
@@ -27,5 +27,15 @@ export class ProfileService {
         return data[i]
       }
     }
+  }
+
+  updateDeveloper(updatedDeveloper) : Observable<any>{
+    console.log("I am in Profile Service");
+    return this.http.put('/api/developer/'+updatedDeveloper.username, updatedDeveloper)
+      .map(
+        (responseData: Response) => {
+          console.log(responseData);
+        }
+      )
   }
 }

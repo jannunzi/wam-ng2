@@ -1,3 +1,46 @@
-<p>
-  edit-profile works!
-</p>
+<md-toolbar color="primary" >
+
+  <span>Edit Profile</span>
+
+  <span class="fill_space"></span>
+
+</md-toolbar>
+
+  <md-card>
+  <md-card-title>
+  </md-card-title>
+  <md-card-content>
+    <form name="form" (ngSubmit)="updateProfile()" #f="ngForm" novalidate>
+      <md-input name="username"
+                required
+                value = {{developer?.username}}
+                [(ngModel)]="updatedDeveloper.username"
+                #name="ngModel">
+      </md-input>
+      <md-input name="email"
+                required
+                value = {{developer?.email}}
+                [(ngModel)]="updatedDeveloper.email"
+                #name="ngModel">
+      </md-input>
+      <md-input name="firstName"
+                required
+                value = {{developer?.firstName}}
+                [(ngModel)]="updatedDeveloper.firstName"
+                #name="ngModel">
+      </md-input>
+      <md-input name="lastName"
+                required
+                value = {{developer?.lastName}}
+                [(ngModel)]="updatedDeveloper.lastName"
+                #name="ngModel">
+      </md-input>
+      <div class="action_button">
+        <button type="submit" md-button >
+          Done
+        </button>
+      </div>
+    </form>
+
+  </md-card-content>
+</md-card>

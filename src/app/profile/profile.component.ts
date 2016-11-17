@@ -33,8 +33,9 @@ export class ProfileComponent implements OnInit {
       );
   }
 
-  editProfile():void{
-    this.router.navigate(['edit']);
+  editProfile(developer):void{
+    this.router.navigate(['/edit/' + developer._id]);
+    // this.router.navigate(['/pages/' + website._developer + "/"+ website._id  ]);
   }
 
   goToWebsites():void{
