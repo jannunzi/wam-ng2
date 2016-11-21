@@ -75,3 +75,9 @@ We then configure the npm start script by editing `package.json' file:
 ```
 
 So we'll run our frontend app by using `npm start` instead of plain old `ng serve`.
+
+## Material Design and Materialize
+
+We intended to use [angular/material2](https://github.com/angular/material2) for this project which is the official Angular team's Material Design component built on top of Angular 2, but it was still in *alpha* at the time of development of this project. 
+
+So instead, we have used some of the fully-developed components like buttons and input from [angular/material2](https://github.com/angular/material2), but for most of the other features of the Material Design like responsive design and layouts, we rely on a *fully developed* and very popular Material Design framework [Materialize](http://materializecss.com/).   

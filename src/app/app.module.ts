@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { WAMRoutingModule } from './app-routing.module';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { MaterializeModule } from "angular2-materialize";
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     HttpModule,
     WAMRoutingModule,
-    MaterialModule.forRoot()
+    // MaterialModule.forRoot()
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

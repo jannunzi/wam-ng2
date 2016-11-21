@@ -1,28 +1,36 @@
-@import "~@angular/material/core/theming/all-theme";
-// Plus imports for other components in your app.
+//@import "~@angular/material/core/theming/all-theme";
+//// Plus imports for other components in your app.
+//
+//// Include the base styles for Angular Material core. We include this here so that you only
+//// have to load a single css file for Angular Material in your app.
+//@include md-core();
+//
+//// Define the palettes for your theme using the Material Design palettes available in palette.scss
+//// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+//// hue.
+//$primary: md-palette($md-blue);
+//$accent:  md-palette($md-amber, A200, A100, A400);
+//$warn: md-palette($md-yellow);
+//$danger: md-palette($md-red);
+//
+//$theme: md-light-theme($primary, $accent);
+//
+//@include angular-material-theme($theme);
+//
+//.m2app-dark {
+//  $dark-primary: md-palette($md-pink, 700, 500, 900);
+//  $dark-accent:  md-palette($md-blue-grey, A200, A100, A400);
+//  $dark-warn:    md-palette($md-deep-orange);
+//
+//  $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
+//
+//  @include angular-material-theme($dark-theme);
+//}
 
-// Include the base styles for Angular Material core. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-@include md-core();
+/* This must be included to use the included variables and the color function */
+@import "../node_modules/materialize-css/sass/components/color";
+$primary-color: color("indigo", "base");
+$secondary-color: color("blue", "lighten-1");
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
-$primary: md-palette($md-blue);
-$accent:  md-palette($md-amber, A200, A100, A400);
-$warn: md-palette($md-yellow);
-$danger: md-palette($md-red);
-
-$theme: md-light-theme($primary, $accent);
-
-@include angular-material-theme($theme);
-
-.m2app-dark {
-  $dark-primary: md-palette($md-pink, 700, 500, 900);
-  $dark-accent:  md-palette($md-blue-grey, A200, A100, A400);
-  $dark-warn:    md-palette($md-deep-orange);
-
-  $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
-
-  @include angular-material-theme($dark-theme);
-}
+$roboto-font-path: "../node_modules/materialize-css/fonts/roboto/"; /* This is needed so the materialize.scss file can load the font */
+@import "../node_modules/materialize-css/sass/materialize";
