@@ -81,3 +81,9 @@ So we'll run our frontend app by using `npm start` instead of plain old `ng serv
 We intended to use [angular/material2](https://github.com/angular/material2) for this project which is the official Angular team's Material Design component built on top of Angular 2, but it was still in *alpha* at the time of development of this project. 
 
 So instead, we have used some of the fully-developed components like buttons and input from [angular/material2](https://github.com/angular/material2), but for most of the other features of the Material Design like responsive design and layouts, we rely on a *fully developed* and very popular Material Design framework [Materialize](http://materializecss.com/).   
+
+In order to integrate Materialize CSS with our app we rely on **two npm packages**:
+* [materialize-css](https://www.npmjs.com/package/materialize-css)
+* [angular2-materialize](https://www.npmjs.com/package/angular2-materialize)
+
+Please follow the **setup guide** on [this wiki page](https://github.com/jannunzi/wam-ng2/wiki/Setting-up-Materialize-CSS) .
