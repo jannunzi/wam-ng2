@@ -1,0 +1,53 @@
+<div>
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo left left-margin-10">&lt;</a>
+            <a class="brand-logo left left-margin-40">New Page</a>
+            <ul id="nav-mobile" class="right">
+                 <li><a (click)="createPage()"><i class="large material-icons">done</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container top-margin">
+    <div class="row">
+        <form>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                      [(ngModel)]="newPage.name"
+                      #name="ngModel"
+                      [ngModelOptions]="{standalone: true}"
+                      placeholder="Name"
+                      id="name"
+                      type="text"
+                      class="validate">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea
+                    [(ngModel)]="newPage.description"
+                    #description="ngModel"
+                    [ngModelOptions]="{standalone: true}"
+                    placeholder="Description"
+                    id="description"
+                    class="materialize-textarea"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="bottom">
+    <nav>
+        <div class="nav-wrapper blue">
+            <ul id="nav-mobile" class="right">
+                <li><a href="#"><i class="large material-icons">perm_identity</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

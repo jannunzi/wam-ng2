@@ -8,6 +8,7 @@ import {WebsitesComponent} from "./websites"
 import {NewWebsiteComponent} from "./new-website"
 import {EditWebsiteComponent} from "./edit-website"
 import { PagesComponent} from "./pages"
+import { NewPageComponent} from "./new-page"
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'new-website', component: NewWebsiteComponent },
   { path: 'edit-website/:websiteId', component: EditWebsiteComponent },
   { path: 'pages/:developerId/:websiteId', component: PagesComponent },
+  { path: 'new-page/website/:websiteId', component: NewPageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

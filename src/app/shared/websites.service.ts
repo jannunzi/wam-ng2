@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { WebsitesComponent} from './../websites'
 import {Website} from './models/website'
 import { Http, Response } from '@angular/http';
 import { Observable } from "rxjs/Observable";
