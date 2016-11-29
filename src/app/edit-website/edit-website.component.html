@@ -1,0 +1,56 @@
+<div>
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo left left-margin-10">&lt;</a>
+            <a class="brand-logo left left-margin-40">Update Website</a>
+            <ul id="nav-mobile" class="right">
+                 <li><a (click)="updateWebsite()"><i class="large material-icons">done</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container top-margin">
+    <div class="row">
+        <form>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input
+                      [(ngModel)]="updatedWebsite.name"
+                      #name="ngModel"
+                      [ngModelOptions]="{standalone: true}"
+                      value = {{w?.name}}
+                      id="name"
+                      type="text"
+                      class="validate">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea
+                    [(ngModel)]="updatedWebsite.description"
+                    #description="ngModel"
+                    [ngModelOptions]="{standalone: true}"
+                    value = {{w?.description}}
+                    id="description"
+                    class="materialize-textarea"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <a (click) = "deleteWebsite()" class="waves-effect waves-light btn-large red"><i class="material-icons right">delete</i>Delete Website</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="bottom">
+    <nav>
+        <div class="nav-wrapper blue">
+            <ul id="nav-mobile" class="right">
+                <li><a href="#"><i class="large material-icons">perm_identity</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

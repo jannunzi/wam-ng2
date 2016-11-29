@@ -15,7 +15,7 @@ export class AuthenticationService {
     };
     console.log('Login in Auth Service');
     return this.http
-      .post('/api/login', developer)
+      .post('http://localhost:3000/api/login', developer)
       .map((res: Response) => {
         let user = res.json();
         console.log('User in Auth Service: ', user);
@@ -28,6 +28,6 @@ export class AuthenticationService {
 
 
   register(user):any {
-    return this.http.post("/api/register", user).toPromise();
+    return this.http.post("http://localhost:3000/api/register", user).toPromise();
   }
 }

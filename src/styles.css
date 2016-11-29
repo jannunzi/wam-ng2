@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-/*@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
-/*@import "~@angular/material/core/theming/all-theme";*/
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 body {
   padding: 0;
@@ -8,4 +8,59 @@ body {
 
 .container {
   padding: 15px;
+}
+
+.top-margin{
+    margin-top: 20px;
+}
+
+.left-margin-40{
+    margin-left: 40px;
+}
+
+.left-margin-10{
+    margin-left: 10px;
+}
+
+.left-margin-15{
+    margin-left: 15px;
+}
+
+.bottom{
+    bottom: 0;
+}
+
+.btn-large{
+    width: 100%;
+}
+
+.text-big{
+    font-size: 1.6rem;
+}
+
+.remove-padding{
+    padding-right: 0;
+}
+
+.relative{
+    position: relative;
+}
+
+.auto-width{
+    max-width: 100%;
+    height: auto;
+}
+
+.edit-and-order-icons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 5px 5px 0;
+}
+
+@media only screen and (min-width: 601px) {
+    .remove-margin-on-med{
+        margin-left: 0;
+    }
 }
