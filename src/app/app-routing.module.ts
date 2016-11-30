@@ -9,6 +9,7 @@ import {NewWebsiteComponent} from "./new-website"
 import {EditWebsiteComponent} from "./edit-website"
 import { PagesComponent} from "./pages"
 import { NewPageComponent} from "./new-page"
+import {EditPageComponent} from "./edit-page"
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'edit-website/:websiteId', component: EditWebsiteComponent },
   { path: 'pages/:developerId/:websiteId', component: PagesComponent },
   { path: 'new-page/website/:websiteId', component: NewPageComponent },
+  { path: 'edit-page/website/:websiteId/page/:pageId', component: EditPageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

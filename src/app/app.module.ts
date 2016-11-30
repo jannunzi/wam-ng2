@@ -17,6 +17,7 @@ import { NewWebsiteComponent } from './new-website/new-website.component';
 import { EditWebsiteComponent } from './edit-website/edit-website.component';
 import { PagesComponent } from './pages/pages.component';
 import { NewPageComponent } from './new-page/new-page.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NewPageComponent } from './new-page/new-page.component';
     NewWebsiteComponent,
     EditWebsiteComponent,
     PagesComponent,
-    NewPageComponent
+    NewPageComponent,
+    EditPageComponent
   ],
   imports: [
     BrowserModule,

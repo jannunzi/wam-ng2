@@ -9,7 +9,6 @@ export class PageService {
 
   constructor(public http : Http) { }
 
-
   /*
   * Find all pages for a given website ID
   */
@@ -22,6 +21,8 @@ export class PageService {
     )
   }
 
+
+
   /*
   * Create a new page
   */
@@ -32,6 +33,34 @@ export class PageService {
           return responseData;
         }
       )
+  }
+
+
+
+  /*
+  * Find Page By ID
+  */
+  findPageById(pageId) : Observable<Page>{
+  return this.http.get('http://localhost:3000/api/page/'+ pageId)
+    .map(
+      (responseData) => {
+        return responseData.json();
+      }
+    )
+  }
+
+
+
+  /*
+  * Update Single Page
+  */
+  updatePage(page) : Observable<any> {
+  return this.http.put('http://localhost:3000/api/page/'+ page._id, page)
+    .map(
+      (responseData) => {
+        return responseData.json();
+      }
+    )
   }
 
 }

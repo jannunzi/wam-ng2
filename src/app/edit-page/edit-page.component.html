@@ -2,9 +2,9 @@
     <nav>
         <div class="nav-wrapper blue">
             <a href="#" class="brand-logo left left-margin-10">&lt;</a>
-            <a class="brand-logo left left-margin-40">New Page</a>
+            <a class="brand-logo left left-margin-40">Update Page</a>
             <ul id="nav-mobile" class="right">
-                 <li><a (click)="createPage()"><i class="large material-icons">done</i></a></li>
+                 <li><a (click)="updatePageById()"><i class="large material-icons">done</i></a></li>
             </ul>
         </div>
     </nav>
@@ -16,10 +16,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input
-                      [(ngModel)]="newPage.name"
+                      [(ngModel)]="updatePage.name"
                       #name="ngModel"
                       [ngModelOptions]="{standalone: true}"
-                      placeholder="Name"
+                      value = {{currentPage?.name}}
                       id="name"
                       type="text"
                       class="validate">
@@ -29,14 +29,17 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea
-                    [(ngModel)]="newPage.title"
+                    [(ngModel)]="updatePage.title"
                     #title="ngModel"
                     [ngModelOptions]="{standalone: true}"
-                    placeholder="Title"
+                    value = {{currentPage?.title}}
                     id="description"
                     class="materialize-textarea"></textarea>
                     <label for="description">Title</label>
                 </div>
+            </div>
+            <div class="row">
+                <a class="waves-effect waves-light btn-large red"><i class="material-icons right">delete</i>Delete Page</a>
             </div>
         </form>
     </div>

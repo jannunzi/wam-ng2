@@ -44,6 +44,10 @@ export class PagesComponent implements OnInit {
     this.router.navigate(['/new-page/website/'+this.websiteId]);
   }
 
+  editPage(page) : void {
+    this.router.navigate(['/edit-page/website/' + this.websiteId + '/page/'+page._id]);
+  }
+
 
 
 }

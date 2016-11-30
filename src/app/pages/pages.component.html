@@ -14,7 +14,7 @@
     <div class="row card hoverable" *ngFor="let page of pages">
         <div class="">
             <a class="left">{{page.name}}</a>
-            <a class="right"><i class="tiny material-icons">settings</i></a>
+            <a (click)="editPage(page)" class="right"><i class="tiny material-icons">settings</i></a>
         </div>
     </div>
 </div>
