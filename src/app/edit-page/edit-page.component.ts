@@ -50,6 +50,13 @@ export class EditPageComponent implements OnInit {
         )
   }
 
+  deletePage() : void{
+    this.pageService.deletePage(this.currentPage._id)
+      .subscribe(
+        website => this.router.navigate(['/pages/' + this.getLoggedInUserId + '/' + this.websiteId])
+      )
+  }
+
   getLoggedInUserId() : string {
     if(!(localStorage.getItem('currentUser') === null)){
       var user :any = JSON.parse(localStorage.getItem('currentUser'));

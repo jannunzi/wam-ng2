@@ -63,4 +63,17 @@ export class PageService {
     )
   }
 
+
+  /*
+  * Delete Single Page
+  */
+  deletePage(pageId) : Observable<any> {
+    return this.http.delete('http://localhost:3000/api/page/' + pageId)
+      .map(
+        (responseData) => {
+          return responseData.json();
+        }
+      )
+  }
+
 }
