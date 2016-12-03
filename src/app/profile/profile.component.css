@@ -1,0 +1,20 @@
+.fill_space{
+  flex: 1 1 auto;
+}
+
+.action_button{
+  text-align: center;
+  margin-top: 5px;
+}
+
+.card-action{
+  text-align: center;
+}
+
+.edit_btn{
+  float: right;
+}
+
+.dummy{
+  clear: both;
+}
