@@ -49,7 +49,7 @@ export class EditWebsiteComponent implements OnInit {
   findWebsiteById() : void{
     this.websitesService.findWebsiteById(this.websiteID)
       .subscribe(
-        website => this.w = website
+        website => this.resolvePromise(website)
       )
   }
 
@@ -65,6 +65,12 @@ export class EditWebsiteComponent implements OnInit {
     }
 
       return user._id;
+  }
+
+  resolvePromise(website) : void{
+    this.w = website;
+    this.updatedWebsite.name = this.w.name;
+    this.updatedWebsite.description = this.w.description;
   }
 
 

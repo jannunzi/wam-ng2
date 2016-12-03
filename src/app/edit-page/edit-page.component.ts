@@ -37,7 +37,7 @@ export class EditPageComponent implements OnInit {
   findPageById() : void{
     this.pageService.findPageById(this.currentPageId)
       .subscribe(
-        page => this.currentPage = page
+        page => this.resolvePromise(page)
       )
   }
 
@@ -65,6 +65,10 @@ export class EditPageComponent implements OnInit {
       return user._id;
   }
 
-
+  resolvePromise(page) : void{
+    this.currentPage = page;
+    this.updatePage.name = this.currentPage.name;
+    this.updatePage.title = this.currentPage.title;
+  }
 
 }
