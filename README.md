@@ -87,3 +87,30 @@ In order to integrate Materialize CSS with our app we rely on **two npm packages
 * [angular2-materialize](https://www.npmjs.com/package/angular2-materialize)
 
 Please follow the **setup guide** on [this wiki page](https://github.com/jannunzi/wam-ng2/wiki/Setting-up-Materialize-CSS) .
+
+## Setting up jQuery UI (v1.11.3) and it's typings
+
+Since jQuery UI, just like jQuery is a 3rd party library, we'll have to install it and import it in our code. 
+
+Also, since npm's `jquery-ui` package does not include the typings we'll have to install them using npm from `@types/` and save it as a dev dependency. So we'll install `@types/jqueryui`:
+
+```bash
+npm install @types/jqueryui --save-dev
+```
+
+**Unfortunately,** the latest version of jQuery UI for which typings are available is 1.11. So we'll be using **version 1.11.3** of jQuery UI in our app.
+
+#### How to use jQuery UI v1.11.3
+
+* Save a local copy of the raw minified js file (v1.11.3) from official [jQuery CDN](http://code.jquery.com/ui/1.11.3/jquery-ui.min.js).
+* The file will be saved inside a newly created `js` folder in `src` folder: `wam-ng2 > src > js > jquery-ui.min.js`
+* In order to load this, add the `jquery-ui.min.js` script in `angular-cli.json`:
+```javascript
+"scripts": [
+  "../node_modules/jquery/dist/jquery.js",
+  "../node_modules/materialize-css/dist/js/materialize.js",
+  "js/jquery-ui.min.js"
+]
+```
+
+Now that we have the both jQuery UI and it's typings setup in the app, we should be able to create angular 2 directives and use jQuery UI features.
