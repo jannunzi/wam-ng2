@@ -92,18 +92,18 @@ Please follow the **setup guide** on [this wiki page](https://github.com/jannunz
 
 Since jQuery UI, just like jQuery is a 3rd party library, we'll have to install it and import it in our code. 
 
-Also, since npm's `jquery-ui` package does not include the typings we'll have to install them using npm from `@types/` and save it as a dev dependency. So we'll install `@types/jqueryui`:
+Also, since npm's `jquery-ui` package does not include the **typings** we'll have to install them using `npm` from `@types/` and save it as a **devDependency**. So we'll install `@types/jqueryui`:
 
 ```bash
 npm install @types/jqueryui --save-dev
 ```
 
-**Unfortunately,** the latest version of jQuery UI for which typings are available is 1.11. So we'll be using **version 1.11.3** of jQuery UI in our app.
+**Unfortunately,** the latest version of jQuery UI for which typings are available is 1.11. So we'll be using **version 1.11.3 of jQuery UI** in our app.
 
 #### How to use jQuery UI v1.11.3
 
 * Save a local copy of the raw minified js file (v1.11.3) from official [jQuery CDN](http://code.jquery.com/ui/1.11.3/jquery-ui.min.js).
-* The file will be saved inside a newly created `js` folder in `src` folder: `wam-ng2 > src > js > jquery-ui.min.js`
+* Save this file in a newly created `js` folder inside the `src` folder: `wam-ng2 > src > js > jquery-ui.min.js`
 * In order to load this, add the `jquery-ui.min.js` script in `angular-cli.json`:
 ```javascript
 "scripts": [
@@ -113,4 +113,4 @@ npm install @types/jqueryui --save-dev
 ]
 ```
 
-Now that we have the both jQuery UI and it's typings setup in the app, we should be able to create angular 2 directives and use jQuery UI features.
+Now that we have the both jQuery UI and it's typings setup in the app, we should be able to create directives and use jQuery UI features.
