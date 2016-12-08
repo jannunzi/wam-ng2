@@ -18,6 +18,7 @@ import { EditWebsiteComponent } from './edit-website/edit-website.component';
 import { PagesComponent } from './pages/pages.component';
 import { NewPageComponent } from './new-page/new-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { JgaSortableDirective } from './directives/jga-sortable.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditPageComponent } from './edit-page/edit-page.component';
     EditWebsiteComponent,
     PagesComponent,
     NewPageComponent,
-    EditPageComponent
+    EditPageComponent,
+    JgaSortableDirective
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
+    "@types/jqueryui": "^1.11.31",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.17",
     "codelyzer": "~0.0.26",

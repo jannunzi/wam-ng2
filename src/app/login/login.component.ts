@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../shared'
+import {Component, OnInit, ElementRef, Inject} from '@angular/core';
+import { AuthenticationService } from '../shared';
+
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -8,10 +10,17 @@ import { AuthenticationService } from '../shared'
 })
 export class LoginComponent implements OnInit {
   developer: any = {};
+  elmt: ElementRef;
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService,
+              @Inject(ElementRef) elementRef: ElementRef) {
+    this.elmt = elementRef;
+  }
 
   ngOnInit() {
+    $(this.elmt.nativeElement)
+        .find('.moving-box')
+        .draggable({containment:'#draggable-parent'});
   }
 
   login () {
