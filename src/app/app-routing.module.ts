@@ -10,6 +10,8 @@ import {EditWebsiteComponent} from "./edit-website"
 import { PagesComponent} from "./pages"
 import { NewPageComponent} from "./new-page"
 import {EditPageComponent} from "./edit-page"
+import { AddWidgetComponent } from "./add-widget"
+import { WidgetsComponent } from "./widgets"
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'pages/:developerId/:websiteId', component: PagesComponent },
   { path: 'new-page/website/:websiteId', component: NewPageComponent },
   { path: 'edit-page/website/:websiteId/page/:pageId', component: EditPageComponent },
+  { path: 'add-widget/website/:websiteId/page/:pageId', component : AddWidgetComponent},
+  { path: 'widgets/website/:websiteId/page/:pageId', component : WidgetsComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
