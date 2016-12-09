@@ -40,6 +40,23 @@ export class WidgetsService {
   */
   updateWidget(websiteId, pageId, widgetId, widget) : Observable<any> {
    return this.http.put('http://localhost:3000/api/website/' + websiteId +'/page/' + pageId + '/widget/' + widgetId, widget)
+   .map(
+     (responseData) => {
+       return responseData.json();
+     }
+   )
+  }
+
+  /*
+  * Find Widget For A Page
+  */
+  findWidgetForPage(websiteId, pageId) : Observable<any> {
+    return this.http.get('http://localhost:3000/api/website/' + websiteId +'/page/' + pageId + '/widget')
+    .map(
+      (responseData) => {
+        return responseData.json();
+      }
+    )
   }
 
 
