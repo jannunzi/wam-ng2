@@ -21,6 +21,9 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { JgaSortableDirective } from './directives/jga-sortable.directive';
 import { AddWidgetComponent } from './add-widget/add-widget.component';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { WidgetHeaderComponent } from './widget-header/widget-header.component';
+import { WidgetYoutubeComponent } from './widget-youtube/widget-youtube.component';
+import { WidgetImageComponent } from './widget-image/widget-image.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { WidgetsComponent } from './widgets/widgets.component';
     EditPageComponent,
     JgaSortableDirective,
     AddWidgetComponent,
-    WidgetsComponent
+    WidgetsComponent,
+    WidgetHeaderComponent,
+    WidgetYoutubeComponent,
+    WidgetImageComponent
   ],
   imports: [
     BrowserModule,
