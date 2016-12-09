@@ -36,11 +36,15 @@ export class WidgetsComponent implements OnInit {
     });
   }
 
-  findWidgetsForPage(){
+  findWidgetsForPage() : void{
     this.widgetsService.findWidgetForPage(this.websiteId, this.pageId)
       .subscribe(
         widgets => this.widgets = widgets
       )
+  }
+
+  editWidget(widget) : void{
+    this.router.navigate(['/widget-edit/website/' + this.websiteId + '/page/'+this.pageId + '/widget/' + widget._id]);
   }
 
 }

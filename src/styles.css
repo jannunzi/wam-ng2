@@ -59,6 +59,7 @@ body {
     padding: 5px 5px 0;
 }
 
+
 @media only screen and (min-width: 601px) {
     .remove-margin-on-med{
         margin-left: 0;

@@ -15,6 +15,7 @@ import { WidgetsComponent } from "./widgets"
 import { WidgetHeaderComponent } from "./widget-header"
 import { WidgetYoutubeComponent } from "./widget-youtube"
 import { WidgetImageComponent } from "./widget-image"
+import { WidgetEditComponent } from "./widget-edit"
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'widget-image/website/:websiteId/page/:pageId', component : WidgetImageComponent },
   { path: 'widget-header/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetHeaderComponent },
   { path: 'widget-youtube/website/:websiteId/page/:pageId', component : WidgetYoutubeComponent },
+  { path: 'widget-edit/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetEditComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

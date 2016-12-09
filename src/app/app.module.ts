@@ -25,6 +25,7 @@ import { WidgetHeaderComponent } from './widget-header/widget-header.component';
 import { WidgetYoutubeComponent } from './widget-youtube/widget-youtube.component';
 import { WidgetImageComponent } from './widget-image/widget-image.component';
 import { NgComponent } from './ng/ng.component';
+import { WidgetEditComponent } from './widget-edit/widget-edit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NgComponent } from './ng/ng.component';
     WidgetHeaderComponent,
     WidgetYoutubeComponent,
     WidgetImageComponent,
-    NgComponent
+    NgComponent,
+    WidgetEditComponent
   ],
   imports: [
     BrowserModule,

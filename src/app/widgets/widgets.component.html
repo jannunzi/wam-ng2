@@ -12,7 +12,8 @@
 
 <div class="container top-margin">
     <div class="row card hoverable" *ngFor="let widget of widgets">
-      <div *ngIf="widget.type == HEADER">
+
+      <div class="left" *ngIf="widget.type == HEADER">
                 <h1 *ngIf="widget.header.size===1">
                     {{widget.text}}
                 </h1>
@@ -31,6 +32,10 @@
                 <h6 *ngIf="widget.header.size===6">
                     {{widget.text}}
                 </h6>
-            </div>
+        </div>
+
+        <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i> 
+          <i class="right large material-icons">reorder</i>
+        </a>
     </div>
 </div>
