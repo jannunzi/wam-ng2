@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'add-widget/website/:websiteId/page/:pageId', component : AddWidgetComponent },
   { path: 'widgets/website/:websiteId/page/:pageId', component : WidgetsComponent },
   { path: 'widget-image/website/:websiteId/page/:pageId', component : WidgetImageComponent },
-  { path: 'widget-header/website/:websiteId/page/:pageId', component : WidgetHeaderComponent },
+  { path: 'widget-header/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetHeaderComponent },
   { path: 'widget-youtube/website/:websiteId/page/:pageId', component : WidgetYoutubeComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
