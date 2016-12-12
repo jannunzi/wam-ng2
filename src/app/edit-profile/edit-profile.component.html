@@ -1,0 +1,104 @@
+<!--<md-toolbar color="primary" >
+
+  <span>Edit Profile</span>
+
+  <span class="fill_space"></span>
+
+</md-toolbar>
+
+  <md-card>
+  <md-card-title>
+  </md-card-title>
+  <md-card-content>
+    <form name="form" (ngSubmit)="updateProfile()" #f="ngForm" novalidate>
+      <md-input name="username"
+                required
+                value = {{developer?.username}}
+                [(ngModel)]="updatedDeveloper.username"
+                #name="ngModel">
+      </md-input>
+      <md-input name="email"
+                required
+                value = {{developer?.email}}
+                [(ngModel)]="updatedDeveloper.email"
+                #name="ngModel">
+      </md-input>
+      <md-input name="firstName"
+                required
+                value = {{developer?.firstName}}
+                [(ngModel)]="updatedDeveloper.firstName"
+                #name="ngModel">
+      </md-input>
+      <md-input name="lastName"
+                required
+                value = {{developer?.lastName}}
+                [(ngModel)]="updatedDeveloper.lastName"
+                #name="ngModel">
+      </md-input>
+      <div class="action_button">
+        <button type="submit" md-button >
+          Done
+        </button>
+      </div>
+    </form>
+
+  </md-card-content>
+</md-card>-->
+
+<div class="row">
+  <div class="card hoverable">
+    <form name="form" (ngSubmit)="updateProfile()" #f="ngForm" novalidate>
+      <div class="card-content">
+        <span class="card-title">Edit Profile</span>
+        <div class="row">
+          <div class="input-field col m6">
+            <input id="username"
+                   class="validate"
+                   name="username1"
+                   type="text"
+                   value="{{developer?.username}}"
+                   [(ngModel)]="updatedDeveloper.username"
+                   #username="ngModel"
+                   required>
+            <label class="active" for="username">Username</label>
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+          </div>
+
+          <div class="input-field col m6">
+            <input id="email"
+                   name="email1"
+                   type="text"
+                   value="{{developer?.email}}"
+                   [(ngModel)]="updatedDeveloper.email"
+                   #email="ngModel">
+            <label class="active" for="email">E-mail</label>
+          </div>
+
+          <div class="input-field col m6">
+            <input id="firstname"
+                   name="firstname1"
+                   type="text"
+                   value="{{developer?.firstName}}"
+                   [(ngModel)]="updatedDeveloper.firstName"
+                   #username="ngModel">
+            <label class="active" for="firstname">First Name</label>
+          </div>
+
+          <div class="input-field col m6">
+            <input id="lastname"
+                   name="lastname1"
+                   type="text"
+                   value="{{developer?.lastName}}"
+                   [(ngModel)]="updatedDeveloper.lastName"
+                   #lastname="ngModel">
+            <label class="active" for="lastname">Last Name</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light" type="submit">Done</button>
+      </div>
+    </form>
+  </div>
+</div>

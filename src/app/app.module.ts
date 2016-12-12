@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 //import { MaterialIcons } from "material-design-icons";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {ProfileComponent} from './profile';
+import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WebsitesComponent } from './websites/websites.component';
 import { NewWebsiteComponent } from './new-website/new-website.component';
@@ -33,6 +35,8 @@ import { JgaDraggableDirective } from './directives/jga-draggable.directive';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
+    EditProfileComponent,
     PageNotFoundComponent,
     WebsitesComponent,
     NewWebsiteComponent,

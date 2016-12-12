@@ -1,0 +1,76 @@
+<!--<div class="profile">
+  <md-toolbar color="primary" >
+
+    <span>Profile</span>
+
+    <span class="fill_space"></span>
+
+    <button md-button (click)="editProfile(developer)">
+      <md-icon>edit</md-icon>
+    </button>
+
+</md-toolbar>
+
+  <md-card>
+    <md-card-content>
+      <div>
+          <label>Username: </label>
+          {{developer.username}}
+      </div>
+      <div>
+          <label>E-Mail Id: </label>
+          {{developer.email}}
+      </div>
+      <div>
+          <label>First Name: </label>
+          {{developer.firstName}}
+      </div>
+      <div>
+          <label>Last Name: </label>
+          {{developer.lastName}}
+      </div>
+
+      <div class="action_button">
+        <button md-button (click)="goToWebsites()">Websites</button>
+      </div>
+
+      <div class="action_button">
+        <button md-button (click)="logout()">Logout</button>
+      </div>
+
+
+
+    </md-card-content>
+
+
+  </md-card>
+
+
+</div>-->
+
+<div class="row">
+  <div class="card hoverable">
+    <div class="card-content">
+      <div class="page_title">
+        <span class="card-title">Profile</span>
+        <button class="btn waves-effect waves-light blue darken-2 edit_btn" (click)="editProfile(developer)">Edit</button>
+        <div class="dummy"></div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="collection">
+            <h6 class="collection-item"><span class="badge">{{developer.username}}</span>Username:</h6>
+            <h6 class="collection-item"><span class="badge">{{developer.email}}</span>Email ID:</h6>
+            <h6 class="collection-item"><span class="badge">{{developer.firstName}}</span>First Name</h6>
+            <h6 class="collection-item"><span class="badge">{{developer.lastName}}</span>Last Name</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      <button class="btn waves-effect waves-light blue darken-2" (click)="goToWebsites()">Websites</button>
+      <button class="btn waves-effect waves-light red darken-2" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login';
+import {ProfileComponent} from './profile';
+import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from "./page-not-found";
 import { WebsitesComponent } from "./websites"
@@ -21,7 +23,9 @@ import { WidgetEditComponent } from "./widget-edit"
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: '', component: LoginComponent },
-  { path: 'websites', component: WebsitesComponent },
+  { path: 'websites', component: WebsitesComponent},
+  { path: 'profile', component: ProfileComponent },
+  { path: 'edit-profile/:developerId', component: EditProfileComponent },
   { path: 'new-website', component: NewWebsiteComponent },
   { path: 'edit-website/:websiteId', component: EditWebsiteComponent },
   { path: 'pages/:developerId/:websiteId', component: PagesComponent },
