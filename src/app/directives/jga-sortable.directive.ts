@@ -12,7 +12,6 @@ export class JgaSortableDirective {
   }
 
   ngAfterViewInit() {
-    // console.log('Elmt in jga-sortable directive: ', this.elmt);
     $(this.elmt.nativeElement)
       .sortable({
         start: function (event, ui) {
@@ -21,7 +20,7 @@ export class JgaSortableDirective {
         stop: function (event, ui) {
           console.log('New Position: ' + ui.item.index());
         }
-      })
+      });
   }
 
 }
