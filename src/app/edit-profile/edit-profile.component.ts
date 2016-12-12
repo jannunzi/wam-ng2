@@ -43,16 +43,38 @@ export class EditProfileComponent implements OnInit {
 
   updateProfile() : void{
     // console.log("I am in Update Profile");
-    console.log('The updated developer is :', this.updatedDeveloper);
-    this.developer.username = this.updatedDeveloper.username;
-    this.developer.email = this.updatedDeveloper.email;
-    this.developer.firstName = this.updatedDeveloper.firstName;
-    this.developer.lastName = this.updatedDeveloper.lastName;
-    console.log(this.developer);
-    this.profileService.updateDeveloper(this.developer)
-      .subscribe(
-        developer => this.router.navigate(['profile'])
-      )
+    if(Object.keys(this.updatedDeveloper).length != 0){
+      // console.log('The developer has updated to: ',this.updatedDeveloper)
+      // IF the "username" field exists in the updatedDeveloper Object, THEN
+      if(this.updatedDeveloper.username){
+        // IF the "username" field in updatedDeveloper Object is not UNDEFINED, that is, if the field is edited THEN
+        if(this.updatedDeveloper.username != 'undefined'){
+          // IF the entered username is same as the current logged in user THEN
+          if(this.updatedDeveloper.username == this.developer.username){
+            this.developer.username = this.updatedDeveloper.username;
+          }else{
+            console.log("The entered username is not same as the current user logged in.")
+            // TODO: This is just a temperory arrangement. Need to do appropriate action
+            this.router.navigate(['profile'])
+          }
+        }
+      }
+      this.developer.email = this.updatedDeveloper.email;
+      this.developer.firstName = this.updatedDeveloper.firstName;
+      this.developer.lastName = this.updatedDeveloper.lastName;
+      this.profileService.updateDeveloper(this.developer)
+        .subscribe(
+          developer => this.router.navigate(['profile'])
+        )
+    }else{
+      // console.log('The developer is not updated. It is: ', this.updatedDeveloper)
+      this.profileService.updateDeveloper(this.developer)
+        .subscribe(
+          developer => this.router.navigate(['profile'])
+        )
+    }
+
+
   }
 
 }

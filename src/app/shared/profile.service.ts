@@ -9,9 +9,9 @@ export class ProfileService {
   constructor (public http : Http) { }
   developer : any
 
-  //TODO: Currently not conneccted to the view. Working from end to end.
+  //TODO: Currently conneccted to the view. Working from end to end. Not perfect.
   getDeveloperByUsername(username) : Observable<any>{
-    console.log('Profile Service :',username);
+    // console.log('Profile Service, GetDeveloperByUsername Method :',username);
     return this.http.get('/api/developer/'+ username)
       .map(
         (responseData: Response) => {
@@ -40,8 +40,8 @@ export class ProfileService {
   }
 
   updateDeveloper(updatedDeveloper) : Observable<any>{
-    console.log("I am in Profile Service");
-    console.log(updatedDeveloper);
+    // console.log("Update Developer Method in ProfileService");
+    // console.log('Got this object to update: ',updatedDeveloper);
     return this.http.put('/api/developer/'+updatedDeveloper.username, updatedDeveloper)
       .map(
         (responseData: Response) => {
