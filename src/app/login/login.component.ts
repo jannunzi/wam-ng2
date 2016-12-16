@@ -1,5 +1,6 @@
 import {Component, OnInit, ElementRef, Inject} from '@angular/core';
 import { AuthenticationService } from '../shared';
+import { Router } from '@angular/router'
 
 declare var $: any;
 
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   elmt: ElementRef;
 
   constructor(private authService: AuthenticationService,
-              @Inject(ElementRef) elementRef: ElementRef) {
+              @Inject(ElementRef) elementRef: ElementRef,
+              private router: Router) {
     this.elmt = elementRef;
   }
 
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
       .login(this.developer.username, this.developer.password)
       .subscribe(
         data => {
-          console.log('ToDo: Navigate to User Profile / Home');
+          this.router.navigate(['profile']);
         },
         error => {
           console.log('Error while logging in at Login Component: ', error);
