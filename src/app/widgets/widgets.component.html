@@ -11,31 +11,33 @@
 </div>
 
 <div class="container top-margin">
+  <div jga-sortable>
     <div class="row card hoverable" *ngFor="let widget of widgets">
 
       <div class="left" *ngIf="widget.type == HEADER">
-                <h1 *ngIf="widget.header.size===1">
-                    {{widget.text}}
-                </h1>
-                <h2 *ngIf="!widget.header.size || widget.header.size===2">
-                    {{widget.text}}
-                </h2>
-                <h3 *ngIf="widget.header.size===3">
-                    {{widget.text}}
-                </h3>
-                <h4 *ngIf="widget.header.size===4">
-                    {{widget.text}}
-                </h4>
-                <h5 *ngIf="widget.header.size===5">
-                    {{widget.text}}
-                </h5>
-                <h6 *ngIf="widget.header.size===6">
-                    {{widget.text}}
-                </h6>
-        </div>
+        <h1 *ngIf="widget.header.size===1">
+          {{widget.text}}
+        </h1>
+        <h2 *ngIf="!widget.header.size || widget.header.size===2">
+          {{widget.text}}
+        </h2>
+        <h3 *ngIf="widget.header.size===3">
+          {{widget.text}}
+        </h3>
+        <h4 *ngIf="widget.header.size===4">
+          {{widget.text}}
+        </h4>
+        <h5 *ngIf="widget.header.size===5">
+          {{widget.text}}
+        </h5>
+        <h6 *ngIf="widget.header.size===6">
+          {{widget.text}}
+        </h6>
+      </div>
 
-        <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i> 
-          <i class="right large material-icons">reorder</i>
-        </a>
+      <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i>
+        <i class="right large material-icons">reorder</i>
+      </a>
     </div>
+  </div>
 </div>

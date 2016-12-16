@@ -11,7 +11,7 @@ export class JgaDraggableDirective {
     this.elmt = elmt;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit () {
     $(this.elmt.nativeElement)
       .draggable({ helper: 'clone' });
   }

@@ -2,3 +2,9 @@
   /*font-size: 12px;*/
   color: crimson;
 }
+
+.drop-box {
+  width: 100px;
+  height: 100px;
+  border: 4px solid black;
+}
