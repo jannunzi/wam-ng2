@@ -1,0 +1,76 @@
+<div>
+  <nav>
+    <div class="nav-wrapper blue">
+
+      <a (click)="goBack()" class="brand-logo left left-margin-10">&lt;</a>
+
+      <a class="brand-logo left left-margin-40">Add New Image</a>
+
+      <ul id="nav-mobile" class="right">
+        <li><a (click)="addImageURL(image)"><i class="large material-icons">done</i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<form enctype="multipart/form-data" class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input
+        [(ngModel)]="image.name"
+        #name="ngModel"
+        [ngModelOptions]="{standalone: true}"
+        placeholder="Name"
+        id="name"
+        name="name"
+        type="text"
+        class="validate">
+      <label for="name">Name</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input
+        [(ngModel)]="image.url"
+        #name="ngModel"
+        [ngModelOptions]="{standalone: true}"
+        placeholder="URL"
+        id="url"
+        name="url"
+        type="url"
+        class="validate">
+      <label for="url">URL</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input
+        (change)="imageChanged($event)"
+        name="myFile"
+        type="file"
+        class="validate">
+
+      <input name="widgetId" value="{{widgetId}}" class="s3" style="display: none"/>
+      <input name="developerId" value="{{developerId}}" style="display: none"/>
+      <input name="pageId" value="{{pageId}}" style="display: none"/>
+      <input name="userId" value="{{userId}}" style="display: none"/>
+      <input name="websiteId" value="{{websiteId}}" style="display: none"/>
+
+
+      <input type="button"
+             (click)="uploadImage(image)"
+             class="btn waves-effect waves-light s9"
+             value="Upload Image">
+    </div>
+  </div>
+
+</form>
+
+<div class="bottom">
+  <nav>
+    <div class="nav-wrapper blue">
+    </div>
+  </nav>
+</div>

@@ -1,3 +1,42 @@
-<p>
-  widget-image works!
-</p>
+<div>
+  <nav>
+    <div class="nav-wrapper blue">
+
+      <a (click)="goBack()" class="brand-logo left left-margin-10">&lt;</a>
+
+      <a class="brand-logo left left-margin-40">Search User Images</a>
+
+      <ul id="nav-mobile" class="right">
+        <li>
+          <a (click)="addImage()">
+            <i class="large material-icons">add</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="row">
+
+  <div *ngFor="let image of hack(images)" class="s4" style="padding-right: 1px;padding-left: 0px;padding-bottom: 1px;">
+    <div ng-if="image.url" class="wrapper">
+      <div class="fill card-image">
+        <a (click)="selectImage(image)"><span class="large material-icons">done</span></a >
+        <a (click)="deleteImage(image._id)"><span class="large material-icons">clear</span></a>
+        <img
+          [src]=image.url
+          class="resize_fit_center"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bottom">
+  <nav>
+    <div class="nav-wrapper blue">
+    </div>
+  </nav>
+</div>

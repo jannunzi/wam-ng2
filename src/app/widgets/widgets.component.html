@@ -1,41 +1,48 @@
 <div>
-    <nav>
-        <div class="nav-wrapper blue">
-            <a href="#" class="brand-logo left left-margin-10">&lt;</a>
-            <a class="brand-logo left left-margin-40">Widgets</a>
-            <ul id="nav-mobile" class="right">
-                 <li><a (click) = "addNewWidget()"><i class="large material-icons">library_add</i></a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#" class="brand-logo left left-margin-10">&lt;</a>
+      <a class="brand-logo left left-margin-40">Widgets</a>
+      <ul id="nav-mobile" class="right">
+        <li><a (click)="addNewWidget()"><i class="large material-icons">library_add</i></a></li>
+      </ul>
+    </div>
+  </nav>
 </div>
 
 <div class="container top-margin">
+  <div jga-sortable>
     <div class="row card hoverable" *ngFor="let widget of widgets">
 
-      <div class="left" *ngIf="widget.type == HEADER">
-                <h1 *ngIf="widget.header.size===1">
-                    {{widget.text}}
-                </h1>
-                <h2 *ngIf="!widget.header.size || widget.header.size===2">
-                    {{widget.text}}
-                </h2>
-                <h3 *ngIf="widget.header.size===3">
-                    {{widget.text}}
-                </h3>
-                <h4 *ngIf="widget.header.size===4">
-                    {{widget.text}}
-                </h4>
-                <h5 *ngIf="widget.header.size===5">
-                    {{widget.text}}
-                </h5>
-                <h6 *ngIf="widget.header.size===6">
-                    {{widget.text}}
-                </h6>
-        </div>
+      <div class="left" *ngIf="widget.widgetType == 'HEADER'">
+        <h1 *ngIf="widget.header.size===1">
+          {{widget.text}}
+        </h1>
+        <h2 *ngIf="!widget.header.size || widget.header.size===2">
+          {{widget.text}}
+        </h2>
+        <h3 *ngIf="widget.header.size===3">
+          {{widget.text}}
+        </h3>
+        <h4 *ngIf="widget.header.size===4">
+          {{widget.text}}
+        </h4>
+        <h5 *ngIf="widget.header.size===5">
+          {{widget.text}}
+        </h5>
+        <h6 *ngIf="widget.header.size===6">
+          {{widget.text}}
+        </h6>
+      </div>
 
-        <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i> 
-          <i class="right large material-icons">reorder</i>
-        </a>
+      <div class="left" *ngIf="widget.widgetType == 'IMAGE'">
+        <img src="{{widget.image.url}}"/>
+        <!--<img src="{{widget.image.url}}" [width]="widget.image.width"/>-->
+      </div>
+
+      <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i>
+        <i class="right large material-icons">reorder</i>
+      </a>
     </div>
+  </div>
 </div>

@@ -24,8 +24,11 @@ export class AddWidgetComponent implements OnInit {
     this.getUrlParams();
   }
 
-  addImage() : void {
-    this.router.navigate(['/widget-image/website/' + this.websiteId + '/page/'+this.pageId]);
+  addImage():void {
+    this.widgetsService.createWidget(this.websiteId, this.pageId, this.getLoggedInUserId(), "IMAGE")
+      .subscribe(
+        widget => this.router.navigate(['/search-widget-image/website/' + this.websiteId + '/page/' + this.pageId + '/widget/' + widget._id])
+      )
   }
 
   addHeader() : void {

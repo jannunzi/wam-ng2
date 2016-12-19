@@ -39,7 +39,9 @@ export class WidgetsComponent implements OnInit {
   findWidgetsForPage() : void{
     this.widgetsService.findWidgetForPage(this.websiteId, this.pageId)
       .subscribe(
-        widgets => this.widgets = widgets
+        widgets => {
+          this.widgets = widgets
+        }
       )
   }
 

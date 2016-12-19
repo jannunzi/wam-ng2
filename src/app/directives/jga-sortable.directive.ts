@@ -11,14 +11,14 @@ export class JgaSortableDirective {
     this.elmt = elmt;
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit () {
     $(this.elmt.nativeElement)
       .sortable({
         start: function (event, ui) {
-          console.log('Old Position: ' + ui.item.index());
+          console.log('Sortable old Position: ' + ui.item.index());
         },
         stop: function (event, ui) {
-          console.log('New Position: ' + ui.item.index());
+          console.log('Sortable new Position: ' + ui.item.index());
         }
       });
   }
