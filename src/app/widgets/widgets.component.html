@@ -15,6 +15,7 @@
     <div class="row card hoverable" *ngFor="let widget of widgets">
 
       <div class="left" *ngIf="widget.widgetType == 'HEADER'">
+
         <h1 *ngIf="widget.header.size===1">
           {{widget.text}}
         </h1>
@@ -39,6 +40,7 @@
         <img src="{{widget.image.url}}"/>
         <!--<img src="{{widget.image.url}}" [width]="widget.image.width"/>-->
       </div>
+
 
       <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i>
         <i class="right large material-icons">reorder</i>

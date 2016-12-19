@@ -30,7 +30,10 @@ import { NgComponent } from './ng/ng.component';
 import { WidgetEditComponent } from './widget-edit/widget-edit.component';
 import { JgaDraggableDirective } from './directives/jga-draggable.directive';
 import { JgaDroppableDirective } from './directives/jga-droppable.directive';
+<<<<<<< HEAD
 import { NewWidgetImageComponent } from './new-widget-image/new-widget-image.component';
+=======
+>>>>>>> 73b1fb85232993083c92b40be120bff03babddb9
 
 @NgModule({
   declarations: [
