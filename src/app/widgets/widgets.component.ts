@@ -3,6 +3,7 @@ import { WidgetsService} from './../shared/widgets.service';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import { Router, Routes, RouterModule, ActivatedRoute} from '@angular/router';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-widgets',
@@ -14,11 +15,13 @@ export class WidgetsComponent implements OnInit {
 
   constructor(private _routeParams: ActivatedRoute,
               private router:Router,
-              private widgetsService : WidgetsService) { }
+              private widgetsService : WidgetsService,
+              private sanitizer : DomSanitizer) { }
 
   websiteId : string;
   pageId : string;
   widgets : any[];
+  youtubeURL: string;
 
   ngOnInit() {
    this.getUrlParams();
@@ -44,7 +47,27 @@ export class WidgetsComponent implements OnInit {
   }
 
   editWidget(widget) : void{
-    this.router.navigate(['/widget-edit/website/' + this.websiteId + '/page/'+this.pageId + '/widget/' + widget._id]);
+    console.log('Edit Widget object: ', typeof(widget.widgetType));
+    if(widget.widgetType === "YOUTUBE"){
+      this.router.navigate(['/youtube-edit/website/' + this.websiteId + '/page/'+this.pageId + '/widget/' + widget._id]);
+    }
+    // this.router.navigate(['/widget-edit/website/' + this.websiteId + '/page/'+this.pageId + '/widget/' + widget._id]);
   }
+
+
+
+
+  // public safeYouTubeUrl(widget) : string{
+  //   console.log("Before If");
+  //   if(widget && widget.youTube) {
+  //     let urlParts = widget.youTube.url.split("/");
+  //     console.log('URL parts: ', urlParts);
+  //     let youTubeId = urlParts[urlParts.length-1];
+  //     console.log(youTubeId);
+  //     return "https://www.youtube.com/embed/"+youTubeId;
+  //   }
+  //   return "";
+  // }
+
 
 }

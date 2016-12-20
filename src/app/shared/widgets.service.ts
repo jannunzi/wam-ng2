@@ -39,6 +39,9 @@ export class WidgetsService {
   * Update Widget
   */
   updateWidget(websiteId, pageId, widgetId, widget) : Observable<any> {
+    if(widget.widgetType == "YOUTUBE"){
+      widget.youTube.url = this.createEmbedUrl(widget.youTube.url);
+    }
    return this.http.put('http://localhost:3000/api/website/' + websiteId +'/page/' + pageId + '/widget/' + widgetId, widget)
    .map(
      (responseData) => {
@@ -46,6 +49,8 @@ export class WidgetsService {
      }
    )
   }
+
+  
 
   /*
   * Find Widget For A Page
@@ -58,6 +63,20 @@ export class WidgetsService {
       }
     )
   }
+
+  //Returns the youtube URL with "embed" tag appended.
+
+  createEmbedUrl(url): string{
+    let urlParts = url.split("/");
+    console.log('URL parts: ', urlParts);
+    let temp = urlParts[urlParts.length-1];
+    let lastParts = temp.split("=")
+    let youTubeId = lastParts[lastParts.length-1];
+    console.log(youTubeId);
+    return "https://www.youtube.com/embed/"+youTubeId;
+  }
+
+
 
 
 }

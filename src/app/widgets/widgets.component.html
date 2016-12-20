@@ -34,7 +34,18 @@
                 </h6>
         </div>
 
-        <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i> 
+      <!--https://www.youtube.com/embed/lo8ZgNws504-->
+      <!--{{widget.youTube.url}}-->
+
+      <div class ="left" *ngIf="widget.type == YOUTUBE">
+          <iframe [src] ="widget.youTube.url"
+                  width="100%"
+                  frameborder="0"
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+        <a><i (click)="editWidget(widget)" class="right large material-icons">settings</i>
           <i class="right large material-icons">reorder</i>
         </a>
     </div>

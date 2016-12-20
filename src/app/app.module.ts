@@ -29,6 +29,7 @@ import { WidgetImageComponent } from './widget-image/widget-image.component';
 import { NgComponent } from './ng/ng.component';
 import { WidgetEditComponent } from './widget-edit/widget-edit.component';
 import { JgaDraggableDirective } from './directives/jga-draggable.directive';
+import { YoutubeEditComponent } from './youtube-edit/youtube-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { JgaDraggableDirective } from './directives/jga-draggable.directive';
     WidgetImageComponent,
     NgComponent,
     WidgetEditComponent,
-    JgaDraggableDirective
+    JgaDraggableDirective,
+    YoutubeEditComponent
   ],
   imports: [
     BrowserModule,

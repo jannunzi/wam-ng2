@@ -2,9 +2,9 @@
   <nav>
     <div class="nav-wrapper blue">
       <a href="#" class="brand-logo left left-margin-10">&lt;</a>
-      <a class="brand-logo left left-margin-40">Add Youtube</a>
+      <a class="brand-logo left left-margin-40">Update Youtube</a>
       <ul id="nav-mobile" class="right">
-        <li><a (click)="addYoutube(youtube)"><i class="large material-icons">done</i></a></li>
+        <li><a (click)="updateYoutube(youtube)"><i class="large material-icons">done</i></a></li>
       </ul>
     </div>
   </nav>
@@ -39,7 +39,8 @@
       </div>
     </div>
     <div class="row">
-      <a (click) = "addYoutube(youtube)" class="waves-effect waves-light btn-large blue"><i class="material-icons right">add</i>Add Youtube</a>
+      <a (click) = "updateYoutube(youtube)" class="waves-effect waves-light btn-large blue"><i class="material-icons right">add</i>Update</a>
+      <a (click) = "deleteYoutube(youtube)" class="waves-effect waves-light btn-large red"><i class="material-icons delete">delete</i>Delete</a>
     </div>
   </form>
 </div>

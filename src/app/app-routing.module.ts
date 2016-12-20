@@ -18,6 +18,7 @@ import { WidgetHeaderComponent } from "./widget-header"
 import { WidgetYoutubeComponent } from "./widget-youtube"
 import { WidgetImageComponent } from "./widget-image"
 import { WidgetEditComponent } from "./widget-edit"
+import { YoutubeEditComponent } from './youtube-edit/youtube-edit.component'
 
 
 const routes: Routes = [
@@ -35,8 +36,9 @@ const routes: Routes = [
   { path: 'widgets/website/:websiteId/page/:pageId', component : WidgetsComponent },
   { path: 'widget-image/website/:websiteId/page/:pageId', component : WidgetImageComponent },
   { path: 'widget-header/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetHeaderComponent },
-  { path: 'widget-youtube/website/:websiteId/page/:pageId', component : WidgetYoutubeComponent },
+  { path: 'widget-youtube/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetYoutubeComponent },
   { path: 'widget-edit/website/:websiteId/page/:pageId/widget/:widgetId', component : WidgetEditComponent },
+  { path: 'youtube-edit/website/:websiteId/page/:pageId/widget/:widgetId', component : YoutubeEditComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

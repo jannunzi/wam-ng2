@@ -33,7 +33,12 @@ export class AddWidgetComponent implements OnInit {
   }
 
   addYouTube() : void {
-    this.router.navigate(['/widget-youtube/website/' + this.websiteId + '/page/'+this.pageId]);
+    //TODO: Create the widgwt here, that is, call createWidget here
+    this.widgetsService.createWidget(this.websiteId, this.pageId, this.getLoggedInUserId(), "YOUTUBE")
+      .subscribe(
+        widget => this.router.navigate(['/widget-youtube/website/' + this.websiteId + '/page/'+this.pageId + '/widget/' + widget._id])
+      )
+    // this.router.navigate(['/widget-youtube/website/' + this.websiteId + '/page/'+this.pageId]);
   }
 
 

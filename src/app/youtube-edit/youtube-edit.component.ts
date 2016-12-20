@@ -6,16 +6,17 @@ import { Router, Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import any = jasmine.any;
 
 @Component({
-  selector: 'app-widget-youtube',
-  templateUrl: './widget-youtube.component.html',
-  styleUrls: ['./widget-youtube.component.css'],
+  selector: 'app-youtube-edit',
+  templateUrl: './youtube-edit.component.html',
+  styleUrls: ['./youtube-edit.component.css'],
   providers: [WidgetsService]
 })
-export class WidgetYoutubeComponent implements OnInit {
+export class YoutubeEditComponent implements OnInit {
 
   constructor(private router:Router,
               private _routeParams: ActivatedRoute,
               private widgetsService : WidgetsService) { }
+
 
   youtube : any = {};
   websiteId : string;
@@ -29,7 +30,7 @@ export class WidgetYoutubeComponent implements OnInit {
     this.getWidgetById();
   }
 
-  addYoutube(youtube) : void{
+  updateYoutube(youtube) : void{
     // console.log('Youtube Object is: ', youtube);
     console.log(this.currentWidget);
     this.currentWidget.youTube = {url : youtube.videoURL, width : youtube.size};
@@ -54,6 +55,10 @@ export class WidgetYoutubeComponent implements OnInit {
       .subscribe(
         widget => this.currentWidget = widget
       )
+  }
+
+  deleteYoutube(youtube) : void{
+
   }
 
 }
